@@ -15,7 +15,7 @@ function generate(length) {
 }
 
 let prerenderPages = [];
-for (var i = 0; i < 100; i++) {
+for (var i = 0; i < 25000; i++) {
   prerenderPages.push(`/${generate(10)}`);
 }
 
