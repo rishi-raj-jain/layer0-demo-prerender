@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier '**/*' --write --ignore-unknown"
   },
   "name": "demo-prerender",
   "version": "0.1.0",
@@ -23,7 +24,7 @@
     "@layer0/next": "^3.16.11",
     "@layer0/prefetch": "^3.16.11",
     "@layer0/react": "^3.16.11",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "dotenv": "^10.0.0",
+    "prettier": "^2.4.1"
   }
 }

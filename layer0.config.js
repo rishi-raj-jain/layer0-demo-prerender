@@ -1,6 +1,6 @@
-// This file was automatically added by layer0 deploy.
-// You should commit this file to source control.
+require('dotenv').config()
+
 module.exports = {
   connector: '@layer0/next',
-  prerenderConcurrency: 200
+  prerenderConcurrency: process.env.ENTERPRISE === 'true' ? 200 : 10,
 }

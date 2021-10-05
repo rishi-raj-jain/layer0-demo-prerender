@@ -1,27 +1,18 @@
-// This file was automatically added by layer0 deploy.
-// You should commit this file to source control.
-const { Router } = require("@layer0/core/router");
-const { nextRoutes } = require("@layer0/next");
+require('dotenv').config()
 
-function generate(length) {
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
+const { generate } = require('./randomStringGenerator')
+const { Router } = require('@layer0/core/router')
+const { nextRoutes } = require('@layer0/next')
 
-let prerenderPages = [];
-for (var i = 0; i < 25000; i++) {
-  prerenderPages.push(`/${generate(10)}`);
+let prerenderPages = []
+let prerenderUrlCount= process.env.ENTERPRISE === 'true' ? 25000 : 100
+for (var i = 0; i < prerenderUrlCount; i++) {
+  prerenderPages.push(`/${generate(10)}`)
 }
 
 module.exports = new Router()
   .prerender(prerenderPages.map((page) => ({ path: page })))
-  .match("/service-worker.js", ({ serviceWorker }) => {
-    return serviceWorker(".next/static/service-worker.js");
+  .match('/service-worker.js', ({ serviceWorker }) => {
+    return serviceWorker('.next/static/service-worker.js')
   })
-  .use(nextRoutes);
+  .use(nextRoutes)

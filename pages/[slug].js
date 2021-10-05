@@ -1,14 +1,14 @@
 const Dynamic = ({ slug }) => {
-  return slug;
-};
+  return slug
+}
 
-export default Dynamic;
+export default Dynamic
 
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: "blocking",
-  };
+    fallback: 'blocking',
+  }
 }
 
 export async function getStaticProps(context) {
@@ -16,5 +16,5 @@ export async function getStaticProps(context) {
     props: {
       slug: context.params.slug,
     },
-  };
+  }
 }
