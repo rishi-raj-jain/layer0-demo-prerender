@@ -1,11 +1,9 @@
-require('dotenv').config()
-
-const { generate } = require('./randomStringGenerator')
-const { Router } = require('@layer0/core/router')
 const { nextRoutes } = require('@layer0/next')
+const { Router } = require('@layer0/core/router')
+const { generate } = require('./randomStringGenerator')
 
 let prerenderPages = []
-let prerenderUrlCount= process.env.ENTERPRISE === 'true' ? 25000 : 100
+let prerenderUrlCount= 25000
 for (var i = 0; i < prerenderUrlCount; i++) {
   prerenderPages.push(`/${generate(10)}`)
 }

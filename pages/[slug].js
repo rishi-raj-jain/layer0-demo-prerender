@@ -1,5 +1,5 @@
-const Dynamic = ({ slug }) => {
-  return slug
+const Dynamic = ({ slug, dateCreated }) => {
+  return `Page: ${slug}, Created At: ${dateCreated}`
 }
 
 export default Dynamic
@@ -15,6 +15,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       slug: context.params.slug,
+      dateCreated: new Date().toString(),
     },
   }
 }
