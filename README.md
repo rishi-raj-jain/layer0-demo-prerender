@@ -1,10 +1,13 @@
 # Static Prerendering with Layer0
+
 A demo showing off Static Prerendering upto 25K URLs with Layer0.
 
 ## Demo
+
 https://demos-layer0-prerender-example-default.layer0-limelight.link
 
 ## Try It Now
+
 [![Deploy with Layer0](https://docs.layer0.co/button.svg)](https://app.layer0.co/deploy?repo=https://github.com/rishi-raj-jain/layer0-demo-prerender)
 
 ## Getting Started
